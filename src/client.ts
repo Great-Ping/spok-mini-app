@@ -4,4 +4,4 @@ import {
 } from './app'
 
 const app = createApp(App)
-    .mount(".root")
+    .mount(".app")
