@@ -19,7 +19,6 @@ const routes = [
             useAnimation: true
         } 
     }
-
 ]
 
 const router = createRouter({

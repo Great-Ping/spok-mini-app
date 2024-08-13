@@ -1,10 +1,7 @@
 <template lang="html">
     <RouterView v-slot="{ Component }" >
         <div class="page-animation-container">
-            <Transition 
-                @before-enter="beforeTransition"
-                :name="transitionName"
-            > 
+            <Transition :name="transitionName"> 
                 <component :is="Component"/>
             </Transition>
         </div>
@@ -12,38 +9,36 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref, watch } from 'vue'
     import { type IAnimationData } from './models/animation-data';
-    import { useRoute } from 'vue-router';
+    import { useRouter } from 'vue-router';
     import { SupportedTransition } from './models/supported-transition';
 
     let transitionName = ref(SupportedTransition.None)
-    let route = useRoute();
-    let previousRouteMeta = route.meta;
+    let router = useRouter();
 
-    function beforeTransition(){
-        let currentData = route.meta
-        let previousData = previousRouteMeta
+    router.beforeEach((to, from, next) => {
+        let currentData = to.meta as IAnimationData
+        let previousData = from.meta as IAnimationData
         
-        previousRouteMeta = route.meta;
-        
-        if (currentData.useAnimation !== true || previousData == null){
+        if (currentData.useAnimation !== true){
             transitionName.value = SupportedTransition.None
-            return
         }
-        
-        if (currentData.pageIndex == null ||  previousData.pageIndex == null ){
-            transitionName.value = SupportedTransition.None
-            return
-        }
-
-        if (currentData.pageIndex < previousData.pageIndex){
+        else if (currentData.pageIndex > previousData.pageIndex){
             transitionName.value = SupportedTransition.Left
         }
         else {
             transitionName.value = SupportedTransition.Right
         }
+        next()
+    })
+
+
+    let savedData: IAnimationData = {
+        pageIndex: -1,
+        useAnimation: false
     }
+
 </script>
 
 <style>
