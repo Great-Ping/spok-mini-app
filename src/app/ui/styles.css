@@ -1,3 +1,11 @@
+@import url('./dark-theme.css');
+@import url('./fonts.css');
+@import url('./reset.css');
+
+:root{
+    --external-margin: 22px;
+}
+
 html, body, .app{
     height: 100%;
     width: 100%;
@@ -6,4 +14,15 @@ html, body, .app{
 .app {
     flex-direction: column;
     display: flex;
+    padding: var(--external-margin);
+}
+
+body{
+    font-family: 'Open Sans';
+    background-color: var(--color-background);
+    color: var(--color-font);
+}   
+
+a {
+    color: var(--color-font);
 }
