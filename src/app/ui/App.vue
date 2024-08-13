@@ -5,6 +5,9 @@ import { Routes } from '@/entities';
 </script>
 
 <template> 
+  <header>
+    ТЕст
+  </header>
   <AnimatedRouterView/>
   <nav>
     <RouterLink :to="Routes.Home">Home</RouterLink>
