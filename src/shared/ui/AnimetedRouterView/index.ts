@@ -1,2 +1,2 @@
 export { default as AnimatedRouterView } from "./AnimatedRouterView.vue"
-export * from "./models/animationData"
+export * from "./models/animation-data"

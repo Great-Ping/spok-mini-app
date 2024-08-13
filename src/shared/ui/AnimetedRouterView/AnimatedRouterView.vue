@@ -2,7 +2,6 @@
     <RouterView v-slot="{ Component }" >
         <div class="page-animation-container">
             <Transition 
-                v-if="transitionName!= SupportedTransition.None"
                 @before-enter="beforeTransition"
                 :name="transitionName"
             > 
@@ -14,9 +13,9 @@
 
 <script setup lang="ts">
     import { ref } from 'vue'
-    import { type IAnimationData } from './models/animationData';
+    import { type IAnimationData } from './models/animation-data';
     import { useRoute } from 'vue-router';
-    import { SupportedTransition } from './models/supportedTransition';
+    import { SupportedTransition } from './models/supported-transition';
 
     let transitionName = ref(SupportedTransition.None)
     let route = useRoute();
