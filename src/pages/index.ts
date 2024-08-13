@@ -1,2 +1,2 @@
-export { default as Home } from "./home/Home.vue"
-export { default as Settings } from "./settings/Settings.vue"
+export { default as Home } from "./home"
+export { default as Settings } from "./settings"

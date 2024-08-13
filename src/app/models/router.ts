@@ -1,12 +1,11 @@
 import { createRouter, createMemoryHistory } from 'vue-router';
-import { Home, Settings } from '@/pages';
 import { Routes } from '@/entities';
 
 let pageIndex = 0;
 const routes = [
     { 
         path: Routes.Home,
-        component: Home,
+        component: () => import("@/pages/home"),
         meta: {
             pageIndex: pageIndex++,
             useAnimation: true
@@ -14,7 +13,7 @@ const routes = [
     },
     { 
         path: Routes.Settings, 
-        component: Settings,
+        component: () => import("@/pages/settings"),
         meta: {
             pageIndex: pageIndex++,
             useAnimation: true
