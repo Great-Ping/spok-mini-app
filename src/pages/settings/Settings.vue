@@ -1,7 +1,15 @@
+<script setup lang="ts">
+import { WidthWrapper } from "@/shared/ui";
+import { NavigationBar } from "@/widgets"
+</script>
+
 <template>
-  <div>
-    settings
-  </div>
+  <main>
+    <div>
+      settings
+    </div>
+    <NavigationBar/>
+  </main> 
 </template>
 
 

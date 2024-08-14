@@ -11,12 +11,6 @@ html, body, .app{
     width: 100%;
 }
 
-.app {
-    flex-direction: column;
-    display: flex;
-    padding: var(--external-margin);
-}
-
 body{
     font-family: 'Open Sans';
     background-color: var(--color-background);

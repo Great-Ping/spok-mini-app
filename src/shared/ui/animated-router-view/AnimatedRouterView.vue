@@ -33,12 +33,6 @@
         next()
     })
 
-
-    let savedData: IAnimationData = {
-        pageIndex: -1,
-        useAnimation: false
-    }
-
 </script>
 
 <style>

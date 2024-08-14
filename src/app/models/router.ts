@@ -1,4 +1,4 @@
-import { createRouter, createMemoryHistory } from 'vue-router';
+import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router';
 import { Routes } from '@/entities';
 
 let pageIndex = 0;
@@ -22,7 +22,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 

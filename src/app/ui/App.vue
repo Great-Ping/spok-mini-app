@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { AnimatedRouterView } from '@/shared/ui';
+import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
 import { RouterLink, RouterView } from 'vue-router'
-import { Routes } from '@/entities';
 </script>
 
 <template>
-  <AnimatedRouterView/>
-  <nav>
-    <RouterLink :to="Routes.Home">Home</RouterLink>
-    <RouterLink :to="Routes.Settings">settings</RouterLink>
-  </nav>  
+  <WidthWrapper height="100%">
+    <AnimatedRouterView/>
+  </WidthWrapper>
 </template>
 
 <style lang="css">
