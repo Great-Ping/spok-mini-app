@@ -6,22 +6,13 @@
 
 <script setup lang="ts">
     let props = defineProps<{
-        maxWidth?: string,
-        height?: string,
+        maxWidth?: string
     }>()
 
-    let wrapperStyle: string | undefined = "";  
+    let wrapperStyle: string | undefined = undefined;  
     
     if (props.maxWidth != null){
-        wrapperStyle += `max-width: ${props.maxWidth};`
-    }
-
-    if (props.height != null){
-        wrapperStyle += `height: ${props.height}`
-    }
-
-    if (wrapperStyle == ""){
-        wrapperStyle = undefined
+        wrapperStyle = `max-width: ${props.maxWidth};`
     }
 </script>
 

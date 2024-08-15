@@ -1,0 +1,17 @@
+.navigation-bar{
+    display: flex;
+    z-index: 10;
+    justify-content: center;
+    background-color: var(--color-background);
+    position: sticky;
+    bottom: 0;
+}
+
+.navigation-bar__link{
+    padding: 10px 25px;
+}
+
+.navigation-bar__icon{
+    width: 30px;
+    height: 30px;
+}

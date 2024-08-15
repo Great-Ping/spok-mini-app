@@ -5,6 +5,7 @@
 }
 
 .page-content{
-    height: 100%;
+    flex: 1 0 auto;
     padding-top: 60px;
+    padding-bottom: 20px;
 }

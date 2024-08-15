@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
-import { RouterLink, RouterView } from 'vue-router'
+    import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
+    import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <WidthWrapper height="100%">
+  <WidthWrapper class="full-height">
     <Suspense>
       <AnimatedRouterView/>
     </Suspense>

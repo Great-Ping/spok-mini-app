@@ -12,6 +12,14 @@ const routes = [
         }
     },
     { 
+        path: Routes.Person,
+        component: () => import("@/pages/person"),
+        meta: {
+            pageIndex: pageIndex++,
+            useAnimation: true
+        }
+    },
+    { 
         path: Routes.Settings, 
         component: () => import("@/pages/settings"),
         meta: {
