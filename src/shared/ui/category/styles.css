@@ -1,4 +1,6 @@
-.category-title{
+.category__title{
     font-weight: 800;
-    font-size: 1.5;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    padding-left: var(--external-margin)
 }

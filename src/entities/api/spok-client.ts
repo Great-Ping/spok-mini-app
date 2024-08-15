@@ -2,20 +2,21 @@ import { type ICollection, ArrayCollection } from "@/shared/models/collections";
 import type { ITopic } from "../topic";
 
 export interface ISpokClient {
-    getTopicsAsync(): Promise<ICollection<ITopic>>
+    getTopicsAsync(count: number, offset: number): Promise<ICollection<ITopic>>
 }
 
 export class FakeSpokClient implements ISpokClient{
-    async getTopicsAsync(): Promise<ICollection<ITopic>> {
+    async getTopicsAsync(count: number, offset: number): Promise<ICollection<ITopic>> {
         let response = await fetch("/test-data-set/pokemons.txt");
         let pokemonsText = await response.text();
         let pokemons = pokemonsText
             .split("\n")
             .map(x => x.split(","))
-        
+            
         let topics = [];
+        pokemons.splice(0, offset);
 
-        for(let i = 0; i < 10 ; i++){
+        for(let i = 0; i < 10 ; i++){   
             let pokemon = pokemons[i]
             let name = pokemon[0]
             

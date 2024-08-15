@@ -43,7 +43,6 @@
     .page-animation-container{
         height: 100%;
         display: flex;
-        overflow: hidden;
         flex-direction: column;
         position: relative;
     }
