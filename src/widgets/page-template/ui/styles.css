@@ -1,0 +1,9 @@
+.page{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.page-content{
+    height: 100%;
+}

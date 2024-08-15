@@ -1,0 +1,1 @@
+export { type ITopic } from "./models/topic"

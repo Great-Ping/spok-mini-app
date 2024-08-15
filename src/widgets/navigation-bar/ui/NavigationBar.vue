@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { Routes } from '@/entities';
+    import { Routes } from '@/entities/routes';
 </script>
 
 <template>

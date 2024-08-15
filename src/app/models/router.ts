@@ -1,5 +1,5 @@
 import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router';
-import { Routes } from '@/entities';
+import { Routes } from '@/entities/routes';
 
 let pageIndex = 0;
 const routes = [

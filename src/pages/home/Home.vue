@@ -1,16 +1,21 @@
 <script setup lang="ts">
+  import type { ISpokClient } from '@/entities/api/spok-client';
   import { Category } from '@/shared/ui';
-  import { WidthWrapper } from '@/shared/ui';
-  import  { NavigationBar } from '@/widgets';
+  import  { PageTemplate } from '@/widgets';
+  import { TopicsList } from '@/widgets/topics-list';
+  import { inject } from 'vue';
+
+  let spokClient = inject("spokClient") as ISpokClient
+  let topics = await spokClient.getTopicsAsync()
+  console.log(topics)
 </script>
 
 <template>
-  <main>
+  <PageTemplate class="home-page">
     <Category title="SPOK.СОН">
-      HOME
+      <TopicsList :topics="topics" />
     </Category> 
-    <NavigationBar/>
-  </main>
+  </PageTemplate>
 </template>
 
 <style lang="css" scoped>

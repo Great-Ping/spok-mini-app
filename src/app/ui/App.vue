@@ -5,7 +5,9 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <WidthWrapper height="100%">
-    <AnimatedRouterView/>
+    <Suspense>
+      <AnimatedRouterView/>
+    </Suspense>
   </WidthWrapper>
 </template>
 

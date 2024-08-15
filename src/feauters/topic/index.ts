@@ -1,0 +1,1 @@
+export { default as Topic } from "./ui/Topic.vue"
