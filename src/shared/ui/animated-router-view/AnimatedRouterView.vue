@@ -37,7 +37,7 @@
 
 <style>
     :root{
-        --page-transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+        --page-transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
     }
     
     .page-animation-container{
@@ -47,41 +47,34 @@
         position: relative;
     }
 
-    .left-enter-from {
-        transform: translateX(100%);
-    }
-    
-    .left-enter-active {
+    .left-enter-active, .right-enter-active{
         position: absolute;
         transition: var(--page-transition);
         width: 100%;
     }
-
-    .left-leave-active {
+    
+    .left-leave-active, .right-leave-active {
         transition: var(--page-transition);
         width: 100%;
     }
+    
+    .left-enter-from {
+        transform: translateX(100%);
+        opacity: 0;
+    }    
 
     .left-leave-to{
         transform: translate(-100%);
+        opacity: 0;
     }
 
     .right-enter-from {
         transform: translateX(-100%);
+        opacity: 1;
     }
     
-    .right-enter-active {
-        position: absolute;
-        width: 100%;
-        transition: var(--page-transition);
-    }
-
-    .right-leave-active {
-        transition: var(--page-transition);
-        width: 100%;
-    }
-
     .right-leave-to{
         transform: translateX(100%);
+        opacity: 0;
     }
 </style>

@@ -9,7 +9,7 @@
   let categories = [
     {
       title: "SPOK.COH",
-      titleStyle:  `font-size: 1.8em;margin-bottom: 30px;`,
+      titleStyle: `font-size: 1.8em;margin-bottom: 30px;`,
       topics: await spokClient.getTopicsAsync(20, 0),
     },
     {
