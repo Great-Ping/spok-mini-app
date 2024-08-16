@@ -3,3 +3,11 @@
     flex-direction: column;
     gap: 50px;
 }
+
+.home {
+    background-attachment: local;
+    background-position: top right;
+    background-size: 170px;
+    background-repeat: no-repeat;
+    background-image: url("/images/dark-theme-background-moon.png");
+}

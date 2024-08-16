@@ -6,7 +6,7 @@
 <template>
   <WidthWrapper class="full-height">
     <Suspense>
-      <AnimatedRouterView/>
+      <AnimatedRouterView class="full-height"/>
     </Suspense>
   </WidthWrapper>
 </template>

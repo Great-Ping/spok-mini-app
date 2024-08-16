@@ -6,10 +6,10 @@
     --external-margin: 22px;
 }
 
+
 html, body, .app{
     height: 100%;
     min-height: 100%;
-    overflow-x: hidden;
 }
 
 body{

@@ -1,7 +1,8 @@
 <template lang="html">
     <RouterView v-slot="{ Component }" >
-        <div class="page-animation-container">
-            <Transition :name="transitionName"> 
+        <div v-bind="$attrs" class="page-animation-container">
+            <Transition
+                :name="transitionName"> 
                 <component :is="Component"/>
             </Transition>
         </div>
@@ -13,6 +14,10 @@
     import { type IAnimationData } from './models/animation-data';
     import { useRouter } from 'vue-router';
     import { SupportedTransition } from './models/supported-transition';
+
+    defineOptions({
+        inheritAttrs: false
+    })
 
     let transitionName = ref(SupportedTransition.None)
     let router = useRouter();
@@ -39,26 +44,25 @@
     :root{
         --page-transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
     }
-    
+
     .page-animation-container{
-        height: 100%;
         display: flex;
         flex-direction: column;
         position: relative;
     }
 
-    .left-enter-active, .right-enter-active{
+    html{
+        overflow-x: hidden;
+    }
+
+    .left-enter-active, .right-enter-active,
+    .left-leave-active, .right-leave-active {
         position: absolute;
         transition: var(--page-transition);
         width: 100%;
     }
-    
-    .left-leave-active, .right-leave-active {
-        transition: var(--page-transition);
-        width: 100%;
-    }
-    
-    .left-enter-from {
+
+    .left-enter-from, .right-leave-to {
         transform: translateX(100%);
         opacity: 0;
     }    
@@ -71,10 +75,5 @@
     .right-enter-from {
         transform: translateX(-100%);
         opacity: 1;
-    }
-    
-    .right-leave-to{
-        transform: translateX(100%);
-        opacity: 0;
     }
 </style>
