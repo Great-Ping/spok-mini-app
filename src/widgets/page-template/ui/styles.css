@@ -1,14 +1,14 @@
-.page{
+.page {
     display: flex;
     height: 100%;
     flex-direction: column;
 }
 
-.page-content-wrapper{
-    padding-top: 60px;
-    padding-bottom: 20px;
-}
-
 .page-content-wrapper::-webkit-scrollbar{
     display: none;
+}
+
+.page-content{
+    padding-top: 60px;
+    padding-bottom: 30px;
 }

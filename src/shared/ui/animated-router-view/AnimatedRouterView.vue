@@ -1,13 +1,3 @@
-<template lang="html">
-    <RouterView v-slot="{ Component }" >
-        <div v-bind="$attrs" class="page-animation-container">
-            <Transition
-                :name="transitionName"> 
-                <component :is="Component"/>
-            </Transition>
-        </div>
-    </RouterView>
-</template>
 
 <script setup lang="ts">
     import { ref } from 'vue'
@@ -18,6 +8,11 @@
     defineOptions({
         inheritAttrs: false
     })
+
+    defineProps<{
+        containerAttrs?: any,
+        componentAttrs?: any
+    }>()
 
     let transitionName = ref(SupportedTransition.None)
     let router = useRouter();
@@ -40,6 +35,17 @@
     })
 
 </script>
+
+<template lang="html">
+    <RouterView v-slot="{ Component }" >
+        <div v-bind="containerAttrs" class="page-animation-container">
+            <Transition
+                :name="transitionName"> 
+                <component v-bind="componentAttrs" :is="Component"/>
+            </Transition>
+        </div>
+    </RouterView>
+</template>
 
 <style>
     :root{

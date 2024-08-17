@@ -22,7 +22,10 @@
 <template>
   <WidthWrapper v-if="!meta.useFullWidth" class="full-height">
     <div class="page">
-      <AnimatedRouterView class="full-height page-content-wrapper">
+      <AnimatedRouterView  
+        :container-attrs="{class: 'full-height page-content-wrapper'}"
+        :component-attrs="{class: 'page-content'}"
+        >
         <slot></slot>
       </AnimatedRouterView>
       <NavigationBar v-if="meta.useButtomNavigationBar"/>

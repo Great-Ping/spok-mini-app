@@ -1,18 +1,18 @@
-@import url('./dark-theme.css');
+@import url('./color-theme.css');
 @import url('./fonts.css');
 @import url('./reset.css');
 
-:root{
-    --external-margin: 22px;
+body{
+    --external-maring: 22px;
 }
 
 
-html, body, .app{
+html, body, .app {
     height: 100%;
     min-height: 100%;
 }
 
-body{
+body {
     font-family: 'Open Sans';
     background-color: var(--color-background);
     color: var(--color-font);
