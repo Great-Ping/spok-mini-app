@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-    import { PageTemplate } from "@/widgets/page-template";
 </script>
 
 <template>
-    <PageTemplate>Profile</PageTemplate>
+    <main>
+        Profile
+    </main>
 </template>

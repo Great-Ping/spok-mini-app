@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { PageTemplate } from "@/widgets"
 </script>
 
 <template>
-  <PageTemplate>
+  <main>
     SETTINGS
-  </PageTemplate>
+  </main>
 </template>
 
 

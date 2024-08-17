@@ -2,12 +2,11 @@
     import { Routes } from '@/entities/routes';
     import { Settings, HomeIcon, PersonIcon } from '@/shared/svg';
     import type { Component } from 'vue';
-    import { useRoute } from 'vue-router';
+    import { useRoute, useRouter } from 'vue-router';
 
     const defaultColor = "#fff"
     const selectedColor = "#4F66E8" 
-
-    const route = useRoute()
+    const router = useRouter();
 
     const navigationLinks = new Map<string, any>()
     
@@ -24,10 +23,18 @@
       icon: Settings
     })
 
-    const currentRoute = navigationLinks.get(route.fullPath)
-    if (currentRoute != null){
-      currentRoute.fillColor = selectedColor;
-    }
+    router.afterEach((to, from, failure) =>{
+      let currentRoute = navigationLinks.get(to.fullPath)
+      if (currentRoute != null){
+        currentRoute.fillColor = selectedColor
+      }
+
+      let previousRoute = navigationLinks.get(from.fullPath)
+      if (previousRoute != null){
+        previousRoute.fillColor = defaultColor;
+      }
+    })
+
 </script>
 
 <template>
@@ -44,16 +51,6 @@
       </component>
 
     </RouterLink>
-
-    <!-- <RouterLink class="navigation-bar__link" :to="Routes.Home">
-      <HomeIcon class="navigation-bar__icon" :fill-color="defaultColor"/>
-    </RouterLink>
-    <RouterLink class="navigation-bar__link" :to="Routes.Person">
-      <PersonIcon class="navigation-bar__icon" :fill-color="defaultColor"/>
-    </RouterLink>
-    <RouterLink class="navigation-bar__link" :to="Routes.Settings">
-      <Settings class="navigation-bar__icon"fill-color="#fff"/>
-    </RouterLink> -->
   </nav>  
 </template>
 

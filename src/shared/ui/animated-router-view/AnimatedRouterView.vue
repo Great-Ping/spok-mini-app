@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, watch } from 'vue'
-    import { type IAnimationData } from './models/animation-data';
+    import { ref } from 'vue'
+    import { type IAnimationMeta } from './models/animation-data';
     import { useRouter } from 'vue-router';
     import { SupportedTransition } from './models/supported-transition';
 
@@ -23,18 +23,19 @@
     let router = useRouter();
 
     router.beforeEach((to, from, next) => {
-        let currentData = to.meta as IAnimationData
-        let previousData = from.meta as IAnimationData
+        let currentData = to.meta as IAnimationMeta
+        let previousData = from.meta as IAnimationMeta
         
-        if (currentData.useAnimation !== true){
+        if (currentData.useAnimation !== true || from.fullPath == undefined){
             transitionName.value = SupportedTransition.None
         }
-        else if (currentData.pageIndex > previousData.pageIndex){
+        else if ((currentData?.pageIndex ?? 0) > (previousData?.pageIndex ?? 0)){
             transitionName.value = SupportedTransition.Left
         }
         else {
             transitionName.value = SupportedTransition.Right
         }
+
         next()
     })
 
@@ -47,12 +48,9 @@
 
     .page-animation-container{
         display: flex;
+        overflow-x: hidden;
         flex-direction: column;
         position: relative;
-    }
-
-    html{
-        overflow-x: hidden;
     }
 
     .left-enter-active, .right-enter-active,

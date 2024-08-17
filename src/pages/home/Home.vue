@@ -2,7 +2,6 @@
   import { inject } from 'vue';
   import type { ISpokClient } from '@/entities/api';
   import { Category } from '@/shared/ui';
-  import  { PageTemplate } from '@/widgets';
   import { TopicsList } from '@/widgets/topics-list';
 
   let spokClient = inject("spokClient") as ISpokClient
@@ -25,7 +24,7 @@
 </script>
 
 <template>
-  <PageTemplate class="home">
+  <main class="home">
     <Category 
       v-for="category in categories" 
       :title="category.title" 
@@ -33,7 +32,7 @@
       >
       <TopicsList :use-short-topics="category.useShort" :topics="category.topics" />
     </Category> 
-  </PageTemplate>
+  </main>
 </template>
 
 <style lang="css">

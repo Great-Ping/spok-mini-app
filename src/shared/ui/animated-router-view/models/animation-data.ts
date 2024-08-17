@@ -1,4 +1,4 @@
-export interface IAnimationData extends Record<string | number | symbol, unknown>{
-    pageIndex: Number,
-    useAnimation: Boolean
+export interface IAnimationMeta{
+    pageIndex?: Number,
+    useAnimation?: Boolean
 }

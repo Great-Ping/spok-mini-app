@@ -1,14 +1,13 @@
 <script setup lang="ts">
     import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
+    import { PageTemplate } from '@/widgets';
     import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <WidthWrapper class="full-height">
-    <Suspense>
-      <AnimatedRouterView class="full-height"/>
-    </Suspense>
-  </WidthWrapper>
+  <Suspense>
+    <PageTemplate/>
+  </Suspense>
 </template>
 
 <style lang="css">

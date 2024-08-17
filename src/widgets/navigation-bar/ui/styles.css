@@ -1,9 +1,7 @@
 .navigation-bar{
     display: flex;
-    z-index: 10;
     justify-content: center;
     background-color: var(--color-background);
-    position: sticky;
     bottom: 0;
 }
 
