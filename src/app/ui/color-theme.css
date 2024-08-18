@@ -1,6 +1,7 @@
 [data-theme=dark] {
     --color-font: #FFF;
     --color-background: #08193A;
+    --color-background-secondary: #112B5E;  
     --color-button-primary: #4F66E8;
     --color-button-pressed: #2c3fa6;
 }

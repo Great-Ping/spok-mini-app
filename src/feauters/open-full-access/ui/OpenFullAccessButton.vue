@@ -10,7 +10,8 @@
 
 <style>
     .open-full-access-button{
-        width: 300px;  
+        width: 100%;
+        max-width: 300px; 
         margin: 0 auto; 
     }
 </style>
