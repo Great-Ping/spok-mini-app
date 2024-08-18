@@ -41,7 +41,7 @@
         <div v-bind="containerAttrs" class="page-animation-container">
             <Transition
                 :name="transitionName"> 
-                <component v-bind="componentAttrs" :is="Component"/>
+                <component class="animated-component" v-bind="componentAttrs" :is="Component"/>
             </Transition>
         </div>
     </RouterView>
@@ -58,12 +58,13 @@
         flex-direction: column;
         position: relative;
     }
-
+    
     .left-enter-active, .right-enter-active,
     .left-leave-active, .right-leave-active {
-        position: absolute;
         transition: var(--page-transition);
+        position: absolute;
         width: 100%;
+        height: 100%;
     }
 
     .left-enter-from, .right-leave-to {

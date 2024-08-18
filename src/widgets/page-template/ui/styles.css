@@ -4,11 +4,12 @@
     flex-direction: column;
 }
 
-.page-content-wrapper::-webkit-scrollbar{
-    display: none;
-}
-
 .page-content{
+    overflow: auto;
     padding-top: 60px;
     padding-bottom: 30px;
+}
+
+.page-content::-webkit-scrollbar{
+    display: none;
 }

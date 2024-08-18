@@ -26,7 +26,7 @@
         :container-attrs="{class: 'full-height page-content-wrapper'}"
         :component-attrs="{class: 'page-content'}"
         >
-        <slot></slot>
+          <slot></slot>
       </AnimatedRouterView>
       <NavigationBar v-if="meta.useButtomNavigationBar"/>
     </div>

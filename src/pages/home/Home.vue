@@ -15,7 +15,12 @@
       title: "Засыпайки",
       topics: await spokClient.getTopicsAsync(20, 20),
       useShort: true
-    },    {
+    },    
+    {
+      title: "Истории на ночь",
+      topics: await spokClient.getTopicsAsync(20, 40)
+    },  
+    {
       title: "Истории на ночь",
       topics: await spokClient.getTopicsAsync(20, 40)
     },
