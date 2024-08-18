@@ -9,5 +9,5 @@
 
 
 <style lang="css" scoped>
-  @import url("./styles.css");
+  /* @import url("./styles.css"); */
 </style>

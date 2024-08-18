@@ -3,8 +3,12 @@
 
     const resizeObserver = new ResizeObserver((entries) =>{
         entries.forEach(entry => {
-            const contentWidth = entry.target.scrollWidth;
+            const contentWidth = entry.target.scrollWidth
             const currentWidth = entry.target.clientWidth
+
+            if (currentWidth >= contentWidth)
+                return
+
             entry.target.scrollLeft = (contentWidth - currentWidth) / 2
         })
     })

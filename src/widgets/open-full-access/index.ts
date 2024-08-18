@@ -1,0 +1,1 @@
+export {default as OpenFullAccess} from "./ui/OpenFullAccess.vue"
