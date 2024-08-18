@@ -1,4 +1,7 @@
 .open-full-access{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
 }
 
@@ -14,7 +17,6 @@
 
 .open-full-access__images{
     display: flex;
-    position: relative;
     overflow: hidden;
     justify-content: space-around;
     align-items: center;
