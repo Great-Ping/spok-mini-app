@@ -6,5 +6,10 @@
     flex-direction: column;
     text-align: center;
     gap: 18px;
-
 }
+
+.leave-feedback__message{
+    font-weight: 600;
+    font-size: 0.9em;
+}
+

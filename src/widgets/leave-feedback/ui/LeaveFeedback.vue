@@ -10,7 +10,7 @@
 
 <template>
     <div class="leave-feedback external-margin"> 
-        <span>
+        <span style="white-space: pre-line" class="leave-feedback__message">
             {{ model.message }}
         </span>
         <LeaveFeedbackButton>{{ model.buttonText }}</LeaveFeedbackButton>

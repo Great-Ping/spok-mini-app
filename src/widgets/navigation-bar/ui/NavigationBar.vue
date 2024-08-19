@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { Routes } from '@/entities/routes';
-    import { Settings, HomeIcon, PersonIcon } from '@/shared/svg';
+    import { SettingsIcon, HomeIcon, PersonIcon } from '@/shared/svg';
     import type { Component } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
 
@@ -20,7 +20,7 @@
     })
     navigationLinks.set(Routes.Settings, {
       fillColor: defaultColor,
-      icon: Settings
+      icon: SettingsIcon
     })
 
     router.afterEach((to, from, failure) =>{

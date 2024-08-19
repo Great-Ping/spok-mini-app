@@ -6,7 +6,7 @@
 
 <template>
     <main class="person full-height">
-        <PageHeader class="external-margin">Profile</PageHeader>
+        <PageHeader class="external-margin">Профиль</PageHeader>
         <OpenFullAccess/>
         <LeaveFeedback/>
     </main>
