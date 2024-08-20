@@ -23,6 +23,8 @@
       icon: SettingsIcon
     })
 
+    let isFirst = true;
+
     router.afterEach((to, from, failure) =>{
       let currentRoute = navigationLinks.get(to.fullPath)
       if (currentRoute != null){
@@ -30,9 +32,11 @@
       }
 
       let previousRoute = navigationLinks.get(from.fullPath)
-      if (previousRoute != null){
+      if (previousRoute != null && !isFirst){
         previousRoute.fillColor = defaultColor;
       }
+      
+      isFirst = false;
     })
 
 </script>
