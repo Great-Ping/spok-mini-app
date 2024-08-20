@@ -3,9 +3,15 @@
     flex-direction: row;
     gap: 20px;
     overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
     padding: 0 var(--external-margin);
 }
 
 .topics-list::-webkit-scrollbar {
     display: none;
 }
+
+.topics-list__item{
+    scroll-snap-align: center;
+}
+

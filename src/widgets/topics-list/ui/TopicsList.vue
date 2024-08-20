@@ -12,7 +12,7 @@
 
 <template>
     <li class="topics-list">
-        <ul v-for="topic in topics">
+        <ul class="topics-list__item" v-for="topic in topics">
             <Topic :topic="topic" :isShort="useShortTopics"/>
         </ul>
     </li>
