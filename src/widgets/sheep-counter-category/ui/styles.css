@@ -1,0 +1,13 @@
+.sheep-counter-category__image{
+    display: block;
+    height: 40%;
+    width: 40%;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.sheep-counter-category__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
