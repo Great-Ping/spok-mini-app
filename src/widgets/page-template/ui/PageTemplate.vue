@@ -28,7 +28,7 @@
         >
           <slot></slot>
       </AnimatedRouterView>
-      <NavigationBar v-if="meta.useButtomNavigationBar"/>
+      <NavigationBar class="sticky" v-if="meta.useButtomNavigationBar"/>
     </div>
   </WidthWrapper>    
 </template>

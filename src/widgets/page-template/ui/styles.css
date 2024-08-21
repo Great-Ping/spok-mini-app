@@ -13,3 +13,7 @@
 .page-content::-webkit-scrollbar{
     display: none;
 }
+
+.sticky {
+    position: sticky;
+}

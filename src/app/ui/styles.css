@@ -17,7 +17,7 @@ html, body, .app {
 }
 
 body {
-    font-family: 'Open Sans' Calibri;
+    font-family: 'Open Sans';
     background-color: var(--color-background);
     color: var(--color-font);
 }   
