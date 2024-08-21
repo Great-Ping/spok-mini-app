@@ -20,11 +20,11 @@ let header = "Настройки"
     <ReferenceParameter :icon="StarIcon" name="Оценить приложение" reference=""/>
     <ReferenceParameter :icon="ChatIcon" name="Связь с разработчиком" reference=""/>
     <ReferenceParameter :icon="ExitIcon" name="Выйти аккаунта" reference=""/>
-    <ReferenceParameter :icon="DeleteIcon" name="Удалить аккаунт" reference=""/>
+    <ReferenceParameter :icon="DeleteIcon" name="Удалить аккаунт" reference=""/>  
   </main>
 </template>
 
 
 <style lang="css" scoped>
-  /* @import url("./styles.css"); */
+  @import url("./styles.css");
 </style>

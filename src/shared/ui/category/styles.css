@@ -1,9 +1,5 @@
-.category__title{
-    padding-left: var(--external-margin);
-    margin-bottom: 25px;
-}
-
-.category__title__text{
-    font-weight: 800;
-    font-size: 1.5em;
+.category{
+    display: flex;
+    flex-direction: column;
+    gap: 25px
 }

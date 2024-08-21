@@ -1,10 +1,13 @@
 <script lang="ts" setup>
+
 </script>
 
 <template>
-
+    <span class="title">
+        <slot></slot>
+    </span>
 </template>
 
-<style>
+<style scoped>
 @import url("./styles.css");
 </style>

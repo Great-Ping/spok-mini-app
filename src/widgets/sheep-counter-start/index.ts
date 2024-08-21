@@ -1,1 +1,0 @@
-export {default as SheepCounterStart} from "./ui/SheepCounterStart.vue"

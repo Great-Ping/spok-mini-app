@@ -3,7 +3,7 @@
   import type { ISpokClient } from '@/entities/api';
   import { Category, PageHeader } from '@/shared/ui';
   import { TopicsList } from '@/widgets/topics-list';
-  import { SheepCounterStart } from '@/widgets/sheep-counter-start';
+  import { SheepCounterCategory } from '@/widgets/sheep-counter-category';
 
   let spokClient = inject("spokClient") as ISpokClient
 
@@ -44,12 +44,8 @@
       >
       <TopicsList :use-short-topics="category.useShort" :topics="category.topics" />
     </Category>
-    <Category
-      :title="lambCounter.title"
-      :is-beta="true"
-    >
-      <SheepCounterStart/>
-    </Category> 
+    
+    <SheepCounterCategory/>
   </main>
 </template>
 

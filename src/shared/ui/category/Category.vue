@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { classicNameResolver } from 'typescript';
 import { isVNode } from 'vue';
+import { Title } from "../"
 
     const props = defineProps<{
         title: string,
@@ -9,11 +10,9 @@ import { isVNode } from 'vue';
 
 <template>
     <article class="category">
-        <div class="category__title"> 
-            <span class="category__title__text">
-                {{title}}
-            </span>
-        </div>    
+        <Title>
+            {{title}}
+        </Title>    
         <slot></slot>
     </article>
 </template>
