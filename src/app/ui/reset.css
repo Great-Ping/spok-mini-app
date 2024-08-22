@@ -11,6 +11,14 @@
 	box-sizing: border-box;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* Links */
 
 a, a:link, a:visited  {
