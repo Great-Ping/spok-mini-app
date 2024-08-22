@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
+import ModalWindow from '@/shared/ui/modal-window/ModalWindow.vue';
   import { PageTemplate } from '@/widgets';
   import { onBeforeMount } from 'vue';
   import { RouterLink, RouterView } from 'vue-router'
