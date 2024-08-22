@@ -6,6 +6,15 @@
     background-color: var(--color-button-primary);
 }
 
-.flat-button:hover{
-    background-color: var(--color-button-pressed);
+
+@media(hover: hover){
+    .flat-button:hover{
+        background-color: var(--color-button-pressed);
+    }
+}
+
+@media(hover: none){
+    .flat-button:active{
+        background-color: var(--color-button-pressed);
+    }
 }
