@@ -1,0 +1,1 @@
+export { default as SheepCounterView } from "./ui/SheepCounterView.vue"

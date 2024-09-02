@@ -8,7 +8,6 @@ export class ArrayCollection<T> implements ICollection<T>{
     constructor(array: Array<T>){
         this.source = array
     }
-
     
     get length(): number {
         return this.source.length

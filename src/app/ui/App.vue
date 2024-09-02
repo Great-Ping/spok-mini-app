@@ -1,14 +1,11 @@
 <script setup lang="ts">
-  import { AnimatedRouterView, WidthWrapper } from '@/shared/ui';
-import ModalWindow from '@/shared/ui/modal-window/ModalWindow.vue';
-  import { PageTemplate } from '@/widgets';
+  import { PageTemplate } from '@/widgets/page-template';
   import { onBeforeMount } from 'vue';
-  import { RouterLink, RouterView } from 'vue-router'
-
+  
   onBeforeMount(() => {
     document.body.setAttribute("data-theme", "dark")
   })
-</script>
+</script> 
 
 <template>
   <Suspense>

@@ -15,5 +15,5 @@
 </template>
 
 <style>
-@import url("./styles.css");
+/* @import url("./styles.css"); */
 </style>

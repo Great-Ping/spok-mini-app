@@ -1,0 +1,7 @@
+.modal-window__container{
+    height: 100%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+}

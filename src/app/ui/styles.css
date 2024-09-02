@@ -1,10 +1,7 @@
 @import url('./color-theme.css');
 @import url('./fonts.css');
 @import url('./reset.css');
-
-body{
-    --external-margin: 22px;
-}
+@import url('./const.css');
 
 .external-margin{
     display: block;

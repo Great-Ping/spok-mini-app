@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-    let props = defineProps<{
-        isVisible: boolean
-    }>()
-
     let className = "modal-window";
-    
-    if (!props.isVisible)
-        className += " hidden"
-
 </script>
 
 <template>

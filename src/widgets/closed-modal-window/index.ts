@@ -1,0 +1,1 @@
+export { default as ClosedModalWindow } from "./ClosedModalWindow.vue"
