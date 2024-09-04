@@ -20,9 +20,9 @@ function onModalCloseRequested(){
 <template>
     <article class="sheep-counter-category">
       <ClosedModalWindow 
-        :isShown="modalIsShown" 
+        :isShown="modalIsShown"
         @closeRequested="onModalCloseRequested">
-        <SheepCounterView/>
+        <SheepCounterView :scale="3" />
       </ClosedModalWindow>
       <Title>
         Счетчик овечек

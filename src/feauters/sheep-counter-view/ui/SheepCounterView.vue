@@ -1,81 +1,82 @@
 <script lang="ts" setup>
     import { onMounted, onUnmounted, ref } from 'vue';
-    import { SheepCounterView } from '../models/view';
+    import { SheepCounterCanvasView } from '../models/view';
     import { WidthWrapper } from '@/shared/ui';
 
+    let props = defineProps<{
+        scale?: number
+    }>()
+
     let canvasRef = ref<HTMLCanvasElement | null>(null);
-    let canvasView: SheepCounterView | undefined;
+    let canvasView: SheepCounterCanvasView | undefined;
+    let fontFace = new FontFace("OpenSans", "url()")
     
-    function drawSheepCounter(canvas: HTMLCanvasElement, view: SheepCounterView)
-    {
-        let context = canvas.getContext("2d");
+    let canvasSize = {
+        width: 0,
+        height: 0
+    }
 
-        if (context == null)
-            throw new Error("Canvas context is Null")
-
-        view.sheeps.forEach((sheep) => {
-            // context.save();
-            context.translate(
-                sheep.position.x,
-                sheep.position.y
-            );
-            context.rotate(sheep.position.deg);
-            
-            context.drawImage(
-                sheep.image, 
-                - sheep.size.widht / 2, 
-                - sheep.size.height / 2,
-                sheep.size.widht, 
-                sheep.size.height
-            )
-            
-            context.rotate(-sheep.position.deg);
-            context.translate(
-                sheep.position.x,
-                sheep.position.y
-            );
-        })
-        
-        
-        view.numbers.forEach((number) => {
-            context.font = `${number.fontSize}px Open Sans`
-            context.fillText(number.text, number.position.x, number.position.y);
-        })
-        
-        let canBeNullStrings = [view.description, view.title];
-        canBeNullStrings.forEach((text) => {
-            if (text == null)
+    function resizeCanvas(canvas: HTMLCanvasElement){
+        let scale = props.scale ?? 1
+        canvas.height = canvas.offsetHeight * scale
+        canvas.width =  canvas.offsetWidth * scale
+    }
+    
+    function resizeView(
+        canvas: HTMLCanvasElement, 
+        canvasView: SheepCounterCanvasView
+    ){  
+        if ( canvas.offsetWidth == canvasSize.width ){
             return;
+        }
+
+        if ( canvas.offsetHeight == canvasSize.height){
+            return;
+        }
         
-        context.font = `${text.fontSize}px Open Sans`
-        context.fillText(text.text, text.position.x, text.position.y);
-    })
-}
+        canvasSize = {
+            height: canvas.offsetHeight,
+            width: canvas.offsetWidth
+        }
+
+        resizeCanvas(canvas)
+        canvasView.resize(canvas.width, canvas.height)
+        canvasView.draw()
+    }
 
     onMounted(()=> {
         let canvas = canvasRef.value;
+        let context = canvas?.getContext("2d")
 
-        if (canvas == null)
+        if (canvas == null || context == null)
             return;
     
-        let onStateChanged = (newState: SheepCounterView) => {
-            drawSheepCounter(canvas, newState)
-        }
-
-        canvasView = new SheepCounterView(onStateChanged)
-        canvas.addEventListener("click", () => canvasView?.increment())
+        let canvasView = new SheepCounterCanvasView(context)
+        canvas.addEventListener("click", (event) => {
+            canvasView.increment()
+            event.stopPropagation()
+            event.preventDefault()
+        })
         
-        drawSheepCounter(canvas, canvasView);
+        canvas.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            return false
+        })
+        
+        window.addEventListener("resize", () => {
+            resizeView(canvas, canvasView)
+        })
+
+        resizeView(canvas, canvasView)
     })
 
 </script>
 
 <template>
-    <WidthWrapper class="full-height">
-        <canvas 
-            ref="canvasRef" 
-            class="sheep-counter-canvas"/>
-    </WidthWrapper>
+    <canvas 
+        ref="canvasRef" 
+        class="sheep-counter-canvas"/>
 </template>
 
 <style lang="css" scoped>

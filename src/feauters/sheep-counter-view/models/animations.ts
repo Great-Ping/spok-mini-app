@@ -68,9 +68,11 @@ export class SheepDisappearanceAnimation extends BaseAnimation<AnimatedSheep>{
 export class Animator {
     private _playingAnimations: Array<IAnimation<any>>
     private _animationLoopIsRunning: Boolean;
+    private _redraw: () => void;
 
-    constructor(){
+    constructor(redraw: () => void){
         this._animationLoopIsRunning = false;
+        this._redraw = redraw;
         this._playingAnimations = []
     }
 
@@ -82,13 +84,14 @@ export class Animator {
         this._playingAnimations.forEach((ainmation) =>{
             ainmation.nextState(timeSpan)
         })
-
+        console.log(this._redraw)
+        this._redraw()
+        
         this._playingAnimations = this._playingAnimations.filter(x => x.isPlaying)
         if (this._playingAnimations.length == 0){
             this._animationLoopIsRunning = false;
-            return;    
+            return;
         }   
-
         requestAnimationFrame(() => this.recAnimationLoop(now))
     }
     
